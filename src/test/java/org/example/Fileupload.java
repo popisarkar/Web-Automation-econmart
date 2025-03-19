@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,6 +43,20 @@ public class Fileupload {
             login_inputs.get(1).sendKeys("password");
         }
 
+         @Test
+        public void information(){
+             WebDriver driver = new ChromeDriver();
+             driver.get("https://ecommart.flytesolutions.com/");
+
+             WebElement HW = driver.findElement(By.xpath("//h3[text()='Top Brands']"));
+             Rectangle res = HW.getRect();
+             System.out.println("X Position: " + res.getX());
+             System.out.println("Y Position: " + res.getY());
+             System.out.println("Width: " + res.getWidth());
+             System.out.println("Height: " + res.getHeight());
+
+
+        }
 
 
 }
